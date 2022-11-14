@@ -25,6 +25,10 @@ if (MSVC)
   add_compile_options(/bigobj)
 endif()
 
+if (MINGW)
+  add_compile_options(-Wa,-mbig-obj)
+endif()
+
 add_subdirectory(lib)
 add_subdirectory(doc)
 add_subdirectory(test)
